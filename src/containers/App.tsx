@@ -11,6 +11,9 @@ interface Props {
 }
 
 export class AppComponent extends React.Component<Props> {
+  componentDidMount() {
+    this.props.getSample();
+  }
   render() {
     return (
       <BrowserRouter>

@@ -1,7 +1,7 @@
 export enum SampleAction {
-  GET = "[Sample] Get",
-  GET_SUCCESS = "[Sample] Get Success",
-  GET_FAIL = "[Sample] Get Fail"
+  GET = '[Sample] Get',
+  GET_SUCCESS = '[Sample] Get Success',
+  GET_FAIL = '[Sample] Get Fail',
 }
 
 export class GetSampleAction {
@@ -13,7 +13,7 @@ export class GetSampleAction {
 
 export class GetSampleSuccessAction {
   readonly type = SampleAction.GET_SUCCESS;
-  constructor(public payload: any[]) {
+  constructor(public payload: any) {
     Object.assign(this, { payload });
   }
 }
