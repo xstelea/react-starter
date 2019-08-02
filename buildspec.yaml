@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - npm i -g yarn
+      - npm i -g surge
+      - yarn
+  build:
+    commands:
+      - yarn build && npx semantic-release
+
+cache:
+  paths:
+    - "/root/.npm/**/*"
+    - "/root/.yarn/**/*"
