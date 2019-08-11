@@ -1,2 +1,2 @@
-export * from "./sample.reducer";
-export * from "./root.reducer";
+export * from './auth.reducer';
+export * from './root.reducer';

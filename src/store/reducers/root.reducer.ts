@@ -1,17 +1,21 @@
-import { combineReducers } from "redux";
-import { createSelector } from "reselect";
-import { sampleReducer, SampleState } from "./sample.reducer";
+import { combineReducers } from 'redux';
+import { createSelector } from 'reselect';
+import { authReducer, AuthState } from './auth.reducer';
 
 export interface State {
-  sample: SampleState;
+  auth: AuthState;
 }
 
 export const reducers = combineReducers({
-  sample: sampleReducer
+  auth: authReducer,
 });
 
-export const sampleState = (state: State) => state.sample;
-export const getSample = createSelector(
-  sampleState,
-  state => state.data
+const authState = (state: State) => state.auth;
+export const getAuth = createSelector(
+  authState,
+  state => state.data,
+);
+export const getIsLoggedIn = createSelector(
+  authState,
+  state => !!state.data,
 );

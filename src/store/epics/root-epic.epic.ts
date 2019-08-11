@@ -1,4 +1,19 @@
-import { combineEpics } from "redux-observable";
-import { sampleEpic } from "./sample.epic";
+import { combineEpics } from 'redux-observable';
 
-export const rootEpic = combineEpics(sampleEpic);
+import {
+  bootstrapEpic,
+  handleCallbackEpic,
+  loginEpic,
+  logoutEpic,
+  userInfoEpic,
+} from './';
+import { checkSessionEpic } from './auth.epic';
+
+export const rootEpic = combineEpics(
+  userInfoEpic,
+  loginEpic,
+  logoutEpic,
+  bootstrapEpic,
+  handleCallbackEpic,
+  checkSessionEpic,
+);

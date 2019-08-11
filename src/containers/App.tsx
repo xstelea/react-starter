@@ -1,36 +1,12 @@
-import { Grid } from '@material-ui/core';
-import React from 'react';
-import { connect } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { Dispatch } from 'redux';
-import { GetSampleAction } from '../store';
-import { Main } from './Main';
+import * as React from 'react';
+import { Route } from 'react-router-dom';
 
-interface Props {
-  getSample: () => void;
-}
+import { Header } from './Header';
 
-export class AppComponent extends React.Component<Props> {
-  componentDidMount() {
-    this.props.getSample();
-  }
-  render() {
-    return (
-      <BrowserRouter>
-        <Grid container>
-          <Route path="*" component={Main} />
-          <Grid container />
-        </Grid>
-      </BrowserRouter>
-    );
-  }
-}
-
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  getSample: () => dispatch(new GetSampleAction()),
-});
-
-export const App = connect(
-  null,
-  mapDispatchToProps,
-)(AppComponent);
+export const App = () => {
+  return (
+    <div>
+      <Route path="*" component={Header} />
+    </div>
+  );
+};

@@ -1,16 +1,20 @@
 import ReactDOM from 'react-dom';
+import 'reflect-metadata';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 import * as React from 'react';
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 import 'rxjs';
 import { App } from './containers/App';
 import { store } from './store';
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById('root'),
 );

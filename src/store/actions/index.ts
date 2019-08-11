@@ -1,1 +1,2 @@
-export * from './sample.actions';
+export * from './auth.actions';
+export * from './bootstrap.actions';
